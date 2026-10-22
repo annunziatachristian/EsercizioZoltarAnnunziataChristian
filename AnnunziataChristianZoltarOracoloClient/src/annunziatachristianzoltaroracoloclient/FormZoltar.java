@@ -58,7 +58,9 @@ public class FormZoltar extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 102, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTitolo.setBackground(new java.awt.Color(204, 204, 0));
         lblTitolo.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        lblTitolo.setForeground(new java.awt.Color(204, 204, 0));
         lblTitolo.setText("★ Z O L T A R ★");
         lblTitolo.setAlignmentY(10.0F);
         lblTitolo.setMaximumSize(new java.awt.Dimension(680, 50));

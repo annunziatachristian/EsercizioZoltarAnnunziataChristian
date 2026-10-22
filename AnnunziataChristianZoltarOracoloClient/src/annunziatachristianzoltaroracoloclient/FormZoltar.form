@@ -31,8 +31,14 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblTitolo">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Serif" size="36" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="cc" red="cc" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x2605; Z O L T A R &#x2605;"/>
         <Property name="alignmentY" type="float" value="10.0"/>
