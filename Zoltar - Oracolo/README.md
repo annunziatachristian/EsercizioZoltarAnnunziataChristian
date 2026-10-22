@@ -7,8 +7,8 @@ in grado di rispondere a qualsiasi domanda, con tre diverse personalità.
 
 ## Struttura del progetto
 
-- `AnnunziataChristianZoltarOracoloServer/` → Applicazione **Server** (console)
-- `AnnunziataChristianZoltarClient/` → Applicazione **Client** con interfaccia grafica (Swing)
+- `AnnunziataChristianZoltarOracolo/` → Applicazione **Server** (console)
+- `AnnunziataChristianZoltarOracoloClient/` → Applicazione **Client** con interfaccia grafica (Swing)
 
 ## Tecnologie utilizzate
 
