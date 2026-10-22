@@ -1,2 +1,4 @@
-/AnnunziataChristianZoltarOracolo/build/
-/AnnunziataChristianZoltarOracoloClient/build/
+build/
+dist/
+nbproject/private/
+*.class
