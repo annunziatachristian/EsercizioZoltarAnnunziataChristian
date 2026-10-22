@@ -62,7 +62,7 @@ public class AnnunziataChristianZoltarOracoloServer {
                 System.out.println("Messaggio dal client:" + messaggio);
                 
                 if(messaggio.equals("HELP")) {
-                    risposta = "Comandi: PERSONA_CATTIVO - EPRSONA_DOLCE - PERSONA_SCHERZOSO - DOMANDA_<testo> - HELP - BYE";
+                    risposta = "Comandi: PERSONA_CATTIVO - PERSONA_DOLCE - PERSONA_SCHERZOSO - DOMANDA_<testo> - HELP - BYE";
                 } else if (messaggio.startsWith("PERSONA_")) {    
                     String tipo = messaggio.substring(8);
                     
@@ -75,7 +75,7 @@ public class AnnunziataChristianZoltarOracoloServer {
                     
                 } else if (messaggio.startsWith("DOMANDA_")) {
                     
-                    if(personalita.equals(" CATTTIVO")) {
+                    if(personalita.equals("CATTIVO")) {
                         risposta = cattivo[r.nextInt(4)];
                     } else if (personalita.equals("DOLCE")) {
                         risposta = dolce[r.nextInt(4)];

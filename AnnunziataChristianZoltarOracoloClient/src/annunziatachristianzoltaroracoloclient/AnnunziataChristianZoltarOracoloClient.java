@@ -14,7 +14,9 @@ public class AnnunziataChristianZoltarOracoloClient {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       // Creo la finestra e la rendo visibile
+        FormZoltar finestra = new FormZoltar();
+        finestra.setVisible(true);
     }
     
 }
