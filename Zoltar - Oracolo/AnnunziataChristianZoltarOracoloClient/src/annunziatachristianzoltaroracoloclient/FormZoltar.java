@@ -52,9 +52,9 @@ public class FormZoltar extends javax.swing.JFrame {
         txtAreaRisposte = new javax.swing.JTextArea();
         btnHelp = new javax.swing.JButton();
         btnEsci = new javax.swing.JButton();
-        txtDomanda1 = new javax.swing.JTextField();
+        txtDomanda = new javax.swing.JTextField();
         lblComando = new javax.swing.JLabel();
-        btnChiedi1 = new javax.swing.JButton();
+        btnChiedi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zoltar - L'Oracolo");
@@ -167,23 +167,23 @@ public class FormZoltar extends javax.swing.JFrame {
         btnEsci.addActionListener(this::btnEsciActionPerformed);
         getContentPane().add(btnEsci, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
 
-        txtDomanda1.setBackground(new java.awt.Color(10, 0, 20));
-        txtDomanda1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtDomanda1.setForeground(new java.awt.Color(255, 215, 0));
-        txtDomanda1.setToolTipText("Scrivi qui la tua domanda all'oracolo");
-        txtDomanda1.setCaretColor(new java.awt.Color(255, 215, 0));
-        getContentPane().add(txtDomanda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 210, 50));
+        txtDomanda.setBackground(new java.awt.Color(10, 0, 20));
+        txtDomanda.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtDomanda.setForeground(new java.awt.Color(255, 215, 0));
+        txtDomanda.setToolTipText("Scrivi qui la tua domanda all'oracolo");
+        txtDomanda.setCaretColor(new java.awt.Color(255, 215, 0));
+        getContentPane().add(txtDomanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 210, 50));
 
         lblComando.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblComando.setForeground(new java.awt.Color(255, 215, 0));
         lblComando.setText("Comando personalizzato* (PREMI HELP)");
         getContentPane().add(lblComando, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
-        btnChiedi1.setBackground(new java.awt.Color(153, 0, 255));
-        btnChiedi1.setForeground(new java.awt.Color(255, 255, 255));
-        btnChiedi1.setText("CHIEDI");
-        btnChiedi1.addActionListener(this::btnChiedi1ActionPerformed);
-        getContentPane().add(btnChiedi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
+        btnChiedi.setBackground(new java.awt.Color(153, 0, 255));
+        btnChiedi.setForeground(new java.awt.Color(255, 255, 255));
+        btnChiedi.setText("CHIEDI");
+        btnChiedi.addActionListener(this::btnChiediActionPerformed);
+        getContentPane().add(btnChiedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -281,9 +281,20 @@ public class FormZoltar extends javax.swing.JFrame {
     System.exit(0);   // chiude il programma
     }//GEN-LAST:event_btnEsciActionPerformed
 
-    private void btnChiedi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiedi1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnChiedi1ActionPerformed
+    private void btnChiediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiediActionPerformed
+     String domanda = txtDomanda.getText();
+
+    try {
+        out.writeUTF("DOMANDA_" + domanda);
+        String risposta = in.readUTF();
+        txtAreaRisposte.append("TU: " + domanda + "\n");
+        txtAreaRisposte.append("ZOLTAR: " + risposta + "\n\n");
+        txtDomanda.setText("");
+    } catch (Exception e) {
+        e.printStackTrace();
+        txtAreaRisposte.append("ERRORE: " + e + "\n");
+    }
+    }//GEN-LAST:event_btnChiediActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,7 +323,7 @@ public class FormZoltar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCattivo;
-    private javax.swing.JButton btnChiedi1;
+    private javax.swing.JButton btnChiedi;
     private javax.swing.JButton btnConnetti;
     private javax.swing.JButton btnDolce;
     private javax.swing.JButton btnEsci;
@@ -329,7 +340,7 @@ public class FormZoltar extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitolo;
     private javax.swing.JTextArea txtAreaRisposte;
     private javax.swing.JTextField txtComando;
-    private javax.swing.JTextField txtDomanda1;
+    private javax.swing.JTextField txtDomanda;
     private javax.swing.JTextField txtIP;
     // End of variables declaration//GEN-END:variables
 }
