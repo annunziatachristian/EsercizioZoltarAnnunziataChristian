@@ -46,16 +46,19 @@ public class FormZoltar extends javax.swing.JFrame {
         btnDolce = new javax.swing.JButton();
         btnScherzoso = new javax.swing.JButton();
         lblDomanda = new javax.swing.JLabel();
-        txtDomanda = new javax.swing.JTextField();
-        btnChiedi = new javax.swing.JButton();
+        txtComando = new javax.swing.JTextField();
+        btnInviaComando = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaRisposte = new javax.swing.JTextArea();
         btnHelp = new javax.swing.JButton();
         btnEsci = new javax.swing.JButton();
+        txtDomanda1 = new javax.swing.JTextField();
+        lblComando = new javax.swing.JLabel();
+        btnChiedi1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zoltar - L'Oracolo");
-        setBackground(new java.awt.Color(153, 102, 255));
+        setBackground(new java.awt.Color(204, 51, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitolo.setBackground(new java.awt.Color(204, 204, 0));
@@ -128,18 +131,18 @@ public class FormZoltar extends javax.swing.JFrame {
         lblDomanda.setText("La tua domanda:");
         getContentPane().add(lblDomanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        txtDomanda.setBackground(new java.awt.Color(10, 0, 20));
-        txtDomanda.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtDomanda.setForeground(new java.awt.Color(255, 215, 0));
-        txtDomanda.setToolTipText("Scrivi qui la tua domanda all'oracolo");
-        txtDomanda.setCaretColor(new java.awt.Color(255, 215, 0));
-        getContentPane().add(txtDomanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 265, 210, 50));
+        txtComando.setBackground(new java.awt.Color(10, 0, 20));
+        txtComando.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtComando.setForeground(new java.awt.Color(255, 215, 0));
+        txtComando.setToolTipText("Scrivi qui la tua domanda all'oracolo");
+        txtComando.setCaretColor(new java.awt.Color(255, 215, 0));
+        getContentPane().add(txtComando, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 210, 50));
 
-        btnChiedi.setBackground(new java.awt.Color(153, 0, 255));
-        btnChiedi.setForeground(new java.awt.Color(255, 255, 255));
-        btnChiedi.setText("CHIEDI");
-        btnChiedi.addActionListener(this::btnChiediActionPerformed);
-        getContentPane().add(btnChiedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+        btnInviaComando.setBackground(new java.awt.Color(51, 51, 255));
+        btnInviaComando.setForeground(new java.awt.Color(255, 255, 255));
+        btnInviaComando.setText("INVIA COMANDO");
+        btnInviaComando.addActionListener(this::btnInviaComandoActionPerformed);
+        getContentPane().add(btnInviaComando, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
 
         txtAreaRisposte.setBackground(new java.awt.Color(0, 0, 0));
         txtAreaRisposte.setColumns(20);
@@ -150,19 +153,37 @@ public class FormZoltar extends javax.swing.JFrame {
         txtAreaRisposte.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtAreaRisposte);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 410, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 410, 120));
 
         btnHelp.setBackground(new java.awt.Color(153, 153, 153));
         btnHelp.setForeground(new java.awt.Color(255, 255, 255));
         btnHelp.setText("HELP");
         btnHelp.addActionListener(this::btnHelpActionPerformed);
-        getContentPane().add(btnHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, -1, -1));
+        getContentPane().add(btnHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
 
         btnEsci.setBackground(new java.awt.Color(0, 0, 0));
         btnEsci.setForeground(new java.awt.Color(255, 255, 255));
         btnEsci.setText("ESCI");
         btnEsci.addActionListener(this::btnEsciActionPerformed);
-        getContentPane().add(btnEsci, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
+        getContentPane().add(btnEsci, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
+
+        txtDomanda1.setBackground(new java.awt.Color(10, 0, 20));
+        txtDomanda1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtDomanda1.setForeground(new java.awt.Color(255, 215, 0));
+        txtDomanda1.setToolTipText("Scrivi qui la tua domanda all'oracolo");
+        txtDomanda1.setCaretColor(new java.awt.Color(255, 215, 0));
+        getContentPane().add(txtDomanda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 210, 50));
+
+        lblComando.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        lblComando.setForeground(new java.awt.Color(255, 215, 0));
+        lblComando.setText("Comando personalizzato* (PREMI HELP)");
+        getContentPane().add(lblComando, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+
+        btnChiedi1.setBackground(new java.awt.Color(153, 0, 255));
+        btnChiedi1.setForeground(new java.awt.Color(255, 255, 255));
+        btnChiedi1.setText("CHIEDI");
+        btnChiedi1.addActionListener(this::btnChiedi1ActionPerformed);
+        getContentPane().add(btnChiedi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -223,27 +244,19 @@ public class FormZoltar extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnScherzosoActionPerformed
 
-    private void btnChiediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiediActionPerformed
-    String domanda = txtDomanda.getText();
-
-    if (domanda.equals("")) {
-        txtAreaRisposte.append("Devi scrivere una domanda!\n\n");
-        return;
-    }
+    private void btnInviaComandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInviaComandoActionPerformed
+     String comando = txtComando.getText();
 
     try {
-        out.writeUTF("DOMANDA_" + domanda);
+        out.writeUTF(comando);              // invia ESATTAMENTE quello che hai scritto
         String risposta = in.readUTF();
-
-        txtAreaRisposte.append("TU: " + domanda + "\n");
-        txtAreaRisposte.append("ZOLTAR: " + risposta + "\n\n");
-
-        txtDomanda.setText("");   // svuoto il campo
-
+        txtAreaRisposte.append(">> " + comando + "\n");
+        txtAreaRisposte.append(risposta + "\n\n");
+        txtComando.setText("");
     } catch (Exception e) {
-        txtAreaRisposte.append("Errore: devi prima connetterti al server.\n");
+        txtAreaRisposte.append("Errore: connettiti prima al server.\n");
     }
-    }//GEN-LAST:event_btnChiediActionPerformed
+    }//GEN-LAST:event_btnInviaComandoActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
     try {
@@ -267,6 +280,10 @@ public class FormZoltar extends javax.swing.JFrame {
 
     System.exit(0);   // chiude il programma
     }//GEN-LAST:event_btnEsciActionPerformed
+
+    private void btnChiedi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiedi1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnChiedi1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,13 +312,15 @@ public class FormZoltar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCattivo;
-    private javax.swing.JButton btnChiedi;
+    private javax.swing.JButton btnChiedi1;
     private javax.swing.JButton btnConnetti;
     private javax.swing.JButton btnDolce;
     private javax.swing.JButton btnEsci;
     private javax.swing.JButton btnHelp;
+    private javax.swing.JButton btnInviaComando;
     private javax.swing.JButton btnScherzoso;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblComando;
     private javax.swing.JLabel lblDomanda;
     private javax.swing.JLabel lblIP;
     private javax.swing.JLabel lblScegli;
@@ -309,7 +328,8 @@ public class FormZoltar extends javax.swing.JFrame {
     private javax.swing.JLabel lblStato;
     private javax.swing.JLabel lblTitolo;
     private javax.swing.JTextArea txtAreaRisposte;
-    private javax.swing.JTextField txtDomanda;
+    private javax.swing.JTextField txtComando;
+    private javax.swing.JTextField txtDomanda1;
     private javax.swing.JTextField txtIP;
     // End of variables declaration//GEN-END:variables
 }
